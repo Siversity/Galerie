@@ -17,5 +17,5 @@ public class Artiste extends Personne {
     }
     
     @OneToMany
-    private ArrayList<Tableau> listeTableaux;
+    private ArrayList<Tableau> listeTableaux = new ArrayList<>();
 }

@@ -1,4 +1,5 @@
 package galerie.entity;
+import java.util.ArrayList;
 import javax.persistence.*;
 import lombok.*;
 
@@ -22,5 +23,8 @@ public class Tableau {
     
     @ManyToOne
     private Artiste artiste;
+    
+    @ManyToMany
+    private ArrayList<Exposition> participationExpos = new ArrayList<>();
     
 }

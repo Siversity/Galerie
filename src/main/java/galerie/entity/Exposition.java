@@ -1,4 +1,5 @@
 package galerie.entity;
+import java.util.ArrayList;
 import java.util.Date;
 import javax.persistence.*;
 import lombok.*;
@@ -7,7 +8,10 @@ import lombok.*;
 @Entity
 public class Exposition {
     
-    @Id
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+    
+    @NonNull
     private Date debut;
     
     private String intitule;
@@ -17,4 +21,7 @@ public class Exposition {
     @ManyToOne
     @NonNull
     private Galerie galerie;
+    
+    @ManyToMany
+    private ArrayList<Tableau> listeTableaux = new ArrayList<>();
 }

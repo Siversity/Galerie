@@ -22,5 +22,5 @@ public class Galerie {
     
     // TODO : Mettre en oeuvre la relation oneToMany vers Exposition
     @OneToMany
-    private ArrayList<Exposition> listeExpos;
+    private ArrayList<Exposition> listeExpos = new ArrayList<>();
 }

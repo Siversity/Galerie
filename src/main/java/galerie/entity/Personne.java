@@ -8,7 +8,10 @@ import lombok.*;
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public class Personne {
     
-    @Id
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+    
+    @Column(length=255)
     private String nom;
     
     @Column(length=255)
