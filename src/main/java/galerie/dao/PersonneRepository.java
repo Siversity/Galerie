@@ -5,6 +5,6 @@ import galerie.entity.Personne;
 
 // This will be AUTO IMPLEMENTED by Spring 
 
-public interface PersonneRepository extends JpaRepository<Personne, String>{
+public interface PersonneRepository extends JpaRepository<Personne, Integer>{
     
 }

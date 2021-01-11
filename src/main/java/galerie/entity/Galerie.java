@@ -1,5 +1,6 @@
 package galerie.entity;
-import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 import javax.persistence.*;
 import lombok.*;
 
@@ -9,18 +10,17 @@ import lombok.*;
 @Getter @Setter @NoArgsConstructor @RequiredArgsConstructor @ToString
 @Entity // Une entité JPA
 public class Galerie {
-    @Id  @GeneratedValue(strategy = GenerationType.IDENTITY) 
+    
+    @Id
     private Integer id;
 
-    @Column(unique=true)
     @NonNull
     private String nom;
     
-    @Column(unique=true)
     @NonNull
     private String adresse;
     
     // TODO : Mettre en oeuvre la relation oneToMany vers Exposition
-    @OneToMany
-    private ArrayList<Exposition> listeExpos = new ArrayList<>();
+    @OneToMany(mappedBy = "organisateur")
+    private List<Exposition> evenements = new LinkedList<>();
 }

@@ -1,5 +1,6 @@
 package galerie.entity;
-import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 import javax.persistence.*;
 import lombok.*;
 
@@ -9,6 +10,10 @@ import lombok.*;
 public class Tableau {
     
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+    
+    @Column(unique=true)
+    @NonNull
     private String title;
     
     @Column(length=255)
@@ -22,9 +27,12 @@ public class Tableau {
     private Integer hauteur;
     
     @ManyToOne
-    private Artiste artiste;
+    private Artiste auteur;
     
-    @ManyToMany
-    private ArrayList<Exposition> participationExpos = new ArrayList<>();
+    @ManyToMany(mappedBy = "oeuvres")
+    private List<Exposition> accrochage = new LinkedList<>();
+    
+    @OneToOne(mappedBy = "oeuvre")
+    private Transaction vendu;
     
 }

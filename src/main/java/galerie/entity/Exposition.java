@@ -1,6 +1,8 @@
 package galerie.entity;
-import java.util.ArrayList;
+import java.time.LocalDate;
 import java.util.Date;
+import java.util.LinkedList;
+import java.util.List;
 import javax.persistence.*;
 import lombok.*;
 
@@ -12,7 +14,7 @@ public class Exposition {
     private Integer id;
     
     @NonNull
-    private Date debut;
+    private LocalDate debut;
     
     private String intitule;
     
@@ -20,8 +22,11 @@ public class Exposition {
     
     @ManyToOne
     @NonNull
-    private Galerie galerie;
+    private Galerie organisateur;
     
     @ManyToMany
-    private ArrayList<Tableau> listeTableaux = new ArrayList<>();
+    private List<Tableau> oeuvres = new LinkedList<>();
+    
+    @OneToMany(mappedBy = "lieuDeVente")
+    private List<Transaction> ventes = new LinkedList<>();
 }

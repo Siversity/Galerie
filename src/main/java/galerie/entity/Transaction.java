@@ -9,6 +9,7 @@ import lombok.*;
 public class Transaction {
     
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
     
     @NonNull
     private Date venduLe;
@@ -16,6 +17,13 @@ public class Transaction {
     @NonNull
     private float prixVente;
     
+    @ManyToOne
+    private Exposition lieuDeVente;
     
+    @OneToOne
+    private Tableau oeuvre;
     
+    @ManyToOne
+    private Personne client;
+
 }

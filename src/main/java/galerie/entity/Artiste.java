@@ -1,5 +1,6 @@
 package galerie.entity;
-import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 import javax.persistence.*;
 import lombok.*;
 
@@ -11,11 +12,11 @@ public class Artiste extends Personne {
     @Column(length=255)
     private String biographie;
     
-    public Artiste(String nom, String adresse, String biographie) {
-        super(nom, adresse);
+    public Artiste(int idPersonne, String nom, String adresse, String biographie) {
+        super(idPersonne, nom, adresse);
         this.biographie = biographie;
     }
     
-    @OneToMany
-    private ArrayList<Tableau> listeTableaux = new ArrayList<>();
+    @OneToMany(mappedBy = "auteur")
+    private List<Tableau> oeuvres = new LinkedList<>();
 }
