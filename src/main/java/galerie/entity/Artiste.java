@@ -9,11 +9,11 @@ import lombok.*;
 
 public class Artiste extends Personne {
     
-    @Column(length=255)
+    @NonNull
     private String biographie;
     
-    public Artiste(int idPersonne, String nom, String adresse, String biographie) {
-        super(idPersonne, nom, adresse);
+    public Artiste(int id, String nom, String adresse, String biographie) {
+        super(id, nom, adresse);
         this.biographie = biographie;
     }
     

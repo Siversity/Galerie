@@ -7,16 +7,17 @@ import lombok.*;
 @NoArgsConstructor @ToString
 @Entity
 
+@DiscriminatorValue("P")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public class Personne {
     
     @Id @GeneratedValue(strategy  = GenerationType.IDENTITY)
     private Integer id;
     
-    @Column(length=255)
+    @NonNull
     private String nom;
     
-    @Column(length=255)
+    @NonNull
     private String adresse;
     
     public Personne(Integer id, String nom, String adresse) {
