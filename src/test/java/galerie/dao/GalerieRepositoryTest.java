@@ -28,5 +28,13 @@ public class GalerieRepositoryTest {
         long nombre = galerieDAO.count();
         assertEquals(combienDansLeJeuDeTest, nombre, "On doit trouver 3 galeries" );
     }
+    
+    @Test
+    @Sql("test-data.sql")
+    public void caAnnuelTest() {
+        float caAttendu = 7;
+        float caAnnuel = galerieDAO.caAnnuel(11, 2000);
+        assertEquals(caAttendu, caAnnuel);
+    }
 
 }
