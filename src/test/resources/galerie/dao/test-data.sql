@@ -23,4 +23,4 @@ INSERT INTO Tableau(id, title, support, largeur, hauteur, auteur_id) VALUES (34,
 
 
 INSERT INTO Transaction(id, vendu_Le, prix_Vente, client_id, lieu_de_vente_id, oeuvre_id) VALUES (51, '2000-07-14', 1, 45, 11, 31);
-INSERT INTO Transaction(id, vendu_Le, prix_Vente, client_id, lieu_de_vente_id, oeuvre_id) VALUES (52, '2000-07-14', 6, 45, 11, 32);
+INSERT INTO Transaction(id, vendu_Le, prix_Vente, client_id, lieu_de_vente_id, oeuvre_id) VALUES (52, '2000-07-14', 6, 46, 11, 32);
