@@ -22,5 +22,5 @@ INSERT INTO Tableau(id, title, support, largeur, hauteur, auteur_id) VALUES (33,
 INSERT INTO Tableau(id, title, support, largeur, hauteur, auteur_id) VALUES (34, 'Autoportrait', 'Toile', 71, 91, 24);
 
 
-INSERT INTO Transaction(id, vendu_Le, prix_Vente, client_id, lieu_de_vente_id, oeuvre_id) VALUES (51, '2020-01-25', 1000000, 45, 11, 31);
-INSERT INTO Transaction(id, vendu_Le, prix_Vente, client_id, lieu_de_vente_id, oeuvre_id) VALUES (52, '2020-06-21', 5000000, 45, 11, 32);
+INSERT INTO Transaction(id, vendu_Le, prix_Vente, client_id, lieu_de_vente_id, oeuvre_id) VALUES (51, '2020-01-25', 1, 45, 11, 31);
+INSERT INTO Transaction(id, vendu_Le, prix_Vente, client_id, lieu_de_vente_id, oeuvre_id) VALUES (52, '2020-06-21', 6, 45, 11, 32);

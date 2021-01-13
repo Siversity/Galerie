@@ -10,10 +10,10 @@ public interface ExpositionRepository extends JpaRepository<Exposition, Integer>
     
         @Query(
         value = 
-        "SELECT COUNT(prixVente) AS chiffreAffaire"
-                + "FROM Exposition"
-                + "INNER JOIN Tableau ON Exposition_id = id"
-                + "WHERE id = :idExpo",
+        "SELECT SUM(Transaction.prix_vente) AS chiffreAffaire "
+                + "FROM Transaction "
+                + "INNER JOIN Exposition ON Transaction.lieu_de_vente_id = Exposition.id "
+                + "WHERE Transaction.lieu_de_vente_id = :idExpo",
         nativeQuery = true
     )
     float chiffreAffairePour(Integer idExpo);

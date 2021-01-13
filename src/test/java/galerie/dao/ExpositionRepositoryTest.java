@@ -14,19 +14,17 @@ import galerie.dao.GalerieRepository;
 
 @Log4j2 // Génère le 'logger' pour afficher les messages de trace
 @DataJpaTest
-public class GalerieRepositoryTest {
-
+public class ExpositionRepositoryTest {
     
     @Autowired
-    private GalerieRepository galerieDAO;
-
+    private ExpositionRepository expositionDAO;
+    
     @Test
-    @Sql("test-data.sql") // On peut charger des donnnées spécifiques pour un test
-    public void onSaitCompterLesEnregistrements() {
-        log.info("On compte les enregistrements de la table 'Galerie'");
-        int combienDansLeJeuDeTest = 3; 
-        long nombre = galerieDAO.count();
-        assertEquals(combienDansLeJeuDeTest, nombre, "On doit trouver 3 galeries" );
+    @Sql("test-data.sql")
+    public void chiffreAffairePourTest() {
+        float caAttendu = 7;
+        float caCalcule = expositionDAO.chiffreAffairePour(11);
+        assertEquals(caAttendu, caCalcule);
     }
-
+    
 }
